@@ -1,3 +1,14 @@
+package main
+
+import (
+    "bytes"
+    //"fmt"
+    "log"
+    "os/exec"
+    "strconv"
+    "strings"
+)
+
 type Process struct {
     pid int
     cpu float64
