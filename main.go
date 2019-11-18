@@ -14,6 +14,8 @@ type Process struct {
     cpu float64
 }
 
+
+ var num float64
 func main() {
     cmd := exec.Command("ps", "aux")
     var out bytes.Buffer
@@ -46,7 +48,13 @@ func main() {
         }
         processes = append(processes, &Process{pid, cpu})
     }
+
     for _, p := range processes {
         log.Println("Process ", p.pid, " takes ", p.cpu, " % of the CPU")
+        //
+        num+=p.cpu
     }
+
+    //
+    log.Println("=====================================>",num)
 }
