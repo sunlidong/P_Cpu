@@ -6,6 +6,7 @@ import (
     "github.com/shirou/gopsutil/disk"
     "github.com/shirou/gopsutil/host"
     "github.com/shirou/gopsutil/mem"
+	"strconv"
 )
 
 func main() {
