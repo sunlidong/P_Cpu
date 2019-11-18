@@ -10,9 +10,9 @@ import (
 
 func main() {
     v, _ := mem.VirtualMemory()
-    c, _ := cpu.CPUInfo()
-    d, _ := disk.DiskUsage("/")
-    n, _ := host.HostInfo()
+    c, _ := cpu.Info()
+    d, _ := disk.Usage("/")
+    n, _ := host.Info()
 
     fmt.Printf("        Mem       : %v GB  Free: %v MB Usage:%f%%\n", v.Total/4/1024/1024/1024/1024, v.Free/4/1024/1024/1024, v.UsedPercent)
     if len(c) > 1 {
