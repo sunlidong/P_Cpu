@@ -13,7 +13,7 @@ func main() {
     c, _ := cpu.Info()
     d, _ := disk.Usage("/")
     n, _ := host.Info()
-
+rep:=strconv.FormatFloat(v.UsedPercent, 'E', -1, 64)
     fmt.Printf("        Mem       : %v GB  Free: %v MB Usage:%f%%\n", v.Total/4/1024/1024/1024/1024, v.Free/4/1024/1024/1024, v.UsedPercent)
     if len(c) > 1 {
         for _, sub_cpu := range c {
@@ -31,5 +31,7 @@ func main() {
     fmt.Printf("        HD        : %v GB  Free: %v GB Usage:%f%%\n", d.Total/1024/1024/1024, d.Free/1024/1024/1024, d.UsedPercent)
     fmt.Printf("        OS        : %v   %v  \n", n.OS, n.PlatformVersion)
     fmt.Printf("        Hostname  : %v  \n", n.Hostname)
+	
+	fmt.Println("rep==>",rep)
 
 }
